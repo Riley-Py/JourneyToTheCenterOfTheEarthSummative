@@ -90,7 +90,7 @@
     <None Include="Resources\house.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Phone_Ringing_8x-Mike_Koenig-696238708.wav" />
+    <None Include="Resources\PhoneRing.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

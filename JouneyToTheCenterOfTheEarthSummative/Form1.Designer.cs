@@ -69,6 +69,7 @@
             this.pictureArea.Location = new System.Drawing.Point(135, 46);
             this.pictureArea.Name = "pictureArea";
             this.pictureArea.Size = new System.Drawing.Size(318, 190);
+            this.pictureArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureArea.TabIndex = 2;
             this.pictureArea.TabStop = false;
             this.pictureArea.Visible = false;

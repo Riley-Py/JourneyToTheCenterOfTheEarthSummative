@@ -7,29 +7,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
+using System.Media; //For images/sounds 
+using System.IO; //To get directory paths
 
 namespace JouneyToTheCenterOfTheEarthSummative
 {
     public partial class adventureGame : Form
     {
         int pageNumber = 0;
+        string parentPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;  //Gets the directory path, regardless of where this is
+        
+
         public adventureGame()
         {
             InitializeComponent();
+               
         }
 
-        private void soundplayer(System.IO.UnmanagedMemoryStream)
+        private void soundplayer(string sound) //Function to load up sound without repeating lines
         {
-            SoundPlayer player = new SoundPlayer(System.IO.UnmanagedMemoryStream);
+            string resourcePath = Path.Combine(parentPath, "Resources");
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = Path.Combine(resourcePath, sound);
+
+            player.Load();
             player.Play();
         }
 
-        private void starting()
+        
+
+        private void starting() //Starts the game up
         {
             beginButton.Visible = false;
             firstTitle.Visible = false;
+
             BackgroundImage = null;
+            BackColor = Color.DimGray;
 
             pictureArea.Visible = true;
             storyLabel.Visible = true;
@@ -41,17 +54,16 @@ namespace JouneyToTheCenterOfTheEarthSummative
 
             storyLabel.Text = "One calm day, while at the house, you get a call from someone";
 
-            soundplayer(Properties.Resources.PhoneRing);
-
             optionOneButton.Text = "Answer the phone";
             optionTwoButton.Text = "Ignore it";
 
+            soundplayer("PhoneRing.wav");
+
         }
         
-        private void beginButton_Click(object sender, EventArgs e)
+        private void beginButton_Click(object sender, EventArgs e) //Beginning button
         {
             starting();
-
         }
     }
 }
