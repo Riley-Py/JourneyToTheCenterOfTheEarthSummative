@@ -12,10 +12,16 @@ using System.IO; //To get directory paths
 
 namespace JouneyToTheCenterOfTheEarthSummative
 {
+    
+    
     public partial class adventureGame : Form
     {
+        
+        
         int pageNumber = 0;
-        string parentPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;  //Gets the directory path, regardless of where this is
+        int gearChoice = 0;
+        Random randomGenerator = new Random();
+        string parentPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;  //Gets the directory path, regardless of what computer it is played on
         
 
         public adventureGame()
@@ -38,6 +44,8 @@ namespace JouneyToTheCenterOfTheEarthSummative
 
         private void starting() //Starts the game up
         {
+            pageNumber = 1;
+
             beginButton.Visible = false;
             firstTitle.Visible = false;
 
@@ -64,6 +72,34 @@ namespace JouneyToTheCenterOfTheEarthSummative
         private void beginButton_Click(object sender, EventArgs e) //Beginning button
         {
             starting();
+        }
+
+        private void optionOneButton_Click(object sender, EventArgs e)
+        {
+            if (pageNumber == 1)
+            {
+                pageNumber = 2;
+            }
+            if (pageNumber == 2)
+            {
+                pageNumber = 4;
+            }
+        }
+
+        private void optionTwoButton_Click(object sender, EventArgs e)
+        {
+            if (pageNumber == 3)
+            {
+
+            }
+        }
+        private void death()
+        {
+            deathLabel.Text = "Do you want to atone for your mistakes?";
+            optionOneButton.Text = "Yes";
+            optionTwoButton.Text = "No";
+            
+
         }
     }
 }

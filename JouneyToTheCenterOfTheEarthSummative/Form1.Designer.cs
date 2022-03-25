@@ -36,6 +36,7 @@
             this.optionOneButton = new System.Windows.Forms.Button();
             this.optionTwoButton = new System.Windows.Forms.Button();
             this.optionThreeButton = new System.Windows.Forms.Button();
+            this.deathLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureArea)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +94,7 @@
             this.optionOneButton.Text = "button1";
             this.optionOneButton.UseVisualStyleBackColor = true;
             this.optionOneButton.Visible = false;
+            this.optionOneButton.Click += new System.EventHandler(this.optionOneButton_Click);
             // 
             // optionTwoButton
             // 
@@ -103,6 +105,7 @@
             this.optionTwoButton.Text = "button2";
             this.optionTwoButton.UseVisualStyleBackColor = true;
             this.optionTwoButton.Visible = false;
+            this.optionTwoButton.Click += new System.EventHandler(this.optionTwoButton_Click);
             // 
             // optionThreeButton
             // 
@@ -114,6 +117,15 @@
             this.optionThreeButton.UseVisualStyleBackColor = true;
             this.optionThreeButton.Visible = false;
             // 
+            // deathLabel
+            // 
+            this.deathLabel.AutoSize = true;
+            this.deathLabel.Location = new System.Drawing.Point(281, 146);
+            this.deathLabel.Name = "deathLabel";
+            this.deathLabel.Size = new System.Drawing.Size(35, 13);
+            this.deathLabel.TabIndex = 7;
+            this.deathLabel.Text = "label1";
+            // 
             // adventureGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,6 +134,7 @@
             this.BackgroundImage = global::JouneyToTheCenterOfTheEarthSummative.Properties.Resources.titlePhoto;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(610, 430);
+            this.Controls.Add(this.deathLabel);
             this.Controls.Add(this.optionThreeButton);
             this.Controls.Add(this.optionTwoButton);
             this.Controls.Add(this.optionOneButton);
@@ -147,6 +160,7 @@
         private System.Windows.Forms.Button optionOneButton;
         private System.Windows.Forms.Button optionTwoButton;
         private System.Windows.Forms.Button optionThreeButton;
+        private System.Windows.Forms.Label deathLabel;
     }
 }
 
