@@ -36,7 +36,7 @@
             this.optionOneButton = new System.Windows.Forms.Button();
             this.optionTwoButton = new System.Windows.Forms.Button();
             this.optionThreeButton = new System.Windows.Forms.Button();
-            this.deathLabel = new System.Windows.Forms.Label();
+            this.continueButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureArea)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,20 +44,20 @@
             // 
             this.firstTitle.AutoSize = true;
             this.firstTitle.BackColor = System.Drawing.Color.Tan;
-            this.firstTitle.Font = new System.Drawing.Font("Perpetua Titling MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstTitle.ForeColor = System.Drawing.Color.ForestGreen;
-            this.firstTitle.Location = new System.Drawing.Point(84, 9);
+            this.firstTitle.Location = new System.Drawing.Point(123, 49);
             this.firstTitle.Name = "firstTitle";
-            this.firstTitle.Size = new System.Drawing.Size(435, 23);
+            this.firstTitle.Size = new System.Drawing.Size(330, 24);
             this.firstTitle.TabIndex = 0;
             this.firstTitle.Text = "Journey to the Center of the Earth!";
             // 
             // beginButton
             // 
             this.beginButton.BackColor = System.Drawing.Color.Tan;
-            this.beginButton.Font = new System.Drawing.Font("Perpetua Titling MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.beginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beginButton.ForeColor = System.Drawing.Color.Red;
-            this.beginButton.Location = new System.Drawing.Point(159, 146);
+            this.beginButton.Location = new System.Drawing.Point(159, 162);
             this.beginButton.Name = "beginButton";
             this.beginButton.Size = new System.Drawing.Size(259, 90);
             this.beginButton.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             // pictureArea
             // 
-            this.pictureArea.Location = new System.Drawing.Point(135, 46);
+            this.pictureArea.Location = new System.Drawing.Point(135, 39);
             this.pictureArea.Name = "pictureArea";
             this.pictureArea.Size = new System.Drawing.Size(318, 190);
             this.pictureArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -78,15 +78,17 @@
             // storyLabel
             // 
             this.storyLabel.AutoSize = true;
-            this.storyLabel.Location = new System.Drawing.Point(132, 239);
+            this.storyLabel.Font = new System.Drawing.Font("PMingLiU-ExtB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storyLabel.Location = new System.Drawing.Point(55, 237);
             this.storyLabel.Name = "storyLabel";
-            this.storyLabel.Size = new System.Drawing.Size(35, 13);
+            this.storyLabel.Size = new System.Drawing.Size(47, 15);
             this.storyLabel.TabIndex = 3;
             this.storyLabel.Text = "label1";
             this.storyLabel.Visible = false;
             // 
             // optionOneButton
             // 
+            this.optionOneButton.Font = new System.Drawing.Font("PMingLiU-ExtB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionOneButton.Location = new System.Drawing.Point(197, 288);
             this.optionOneButton.Name = "optionOneButton";
             this.optionOneButton.Size = new System.Drawing.Size(196, 23);
@@ -98,6 +100,7 @@
             // 
             // optionTwoButton
             // 
+            this.optionTwoButton.Font = new System.Drawing.Font("PMingLiU-ExtB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionTwoButton.Location = new System.Drawing.Point(197, 336);
             this.optionTwoButton.Name = "optionTwoButton";
             this.optionTwoButton.Size = new System.Drawing.Size(196, 23);
@@ -109,6 +112,7 @@
             // 
             // optionThreeButton
             // 
+            this.optionThreeButton.Font = new System.Drawing.Font("PMingLiU-ExtB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionThreeButton.Location = new System.Drawing.Point(197, 382);
             this.optionThreeButton.Name = "optionThreeButton";
             this.optionThreeButton.Size = new System.Drawing.Size(196, 23);
@@ -116,15 +120,19 @@
             this.optionThreeButton.Text = "button3";
             this.optionThreeButton.UseVisualStyleBackColor = true;
             this.optionThreeButton.Visible = false;
+            this.optionThreeButton.Click += new System.EventHandler(this.optionThreeButton_Click);
             // 
-            // deathLabel
+            // continueButton
             // 
-            this.deathLabel.AutoSize = true;
-            this.deathLabel.Location = new System.Drawing.Point(281, 146);
-            this.deathLabel.Name = "deathLabel";
-            this.deathLabel.Size = new System.Drawing.Size(35, 13);
-            this.deathLabel.TabIndex = 7;
-            this.deathLabel.Text = "label1";
+            this.continueButton.Font = new System.Drawing.Font("PMingLiU-ExtB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.continueButton.Location = new System.Drawing.Point(163, 307);
+            this.continueButton.Name = "continueButton";
+            this.continueButton.Size = new System.Drawing.Size(255, 23);
+            this.continueButton.TabIndex = 8;
+            this.continueButton.Text = "Continue";
+            this.continueButton.UseVisualStyleBackColor = true;
+            this.continueButton.Visible = false;
+            this.continueButton.Click += new System.EventHandler(this.continueButton_Click);
             // 
             // adventureGame
             // 
@@ -133,8 +141,8 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::JouneyToTheCenterOfTheEarthSummative.Properties.Resources.titlePhoto;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(610, 430);
-            this.Controls.Add(this.deathLabel);
+            this.ClientSize = new System.Drawing.Size(618, 430);
+            this.Controls.Add(this.continueButton);
             this.Controls.Add(this.optionThreeButton);
             this.Controls.Add(this.optionTwoButton);
             this.Controls.Add(this.optionOneButton);
@@ -160,7 +168,7 @@
         private System.Windows.Forms.Button optionOneButton;
         private System.Windows.Forms.Button optionTwoButton;
         private System.Windows.Forms.Button optionThreeButton;
-        private System.Windows.Forms.Label deathLabel;
+        private System.Windows.Forms.Button continueButton;
     }
 }
 

@@ -92,5 +92,23 @@
   <ItemGroup>
     <None Include="Resources\PhoneRing.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earthcenter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nothingspecial.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tryagain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iceland.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suitcase.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airport.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
