@@ -119,5 +119,116 @@
   <ItemGroup>
     <None Include="Resources\reyvolcano.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jumpintovolcano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regret.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wait.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fastforward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pathwaytovolcano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volcanofumes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magmachasm.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anakinlava.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magmashooting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caveentrance.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftright.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\darkness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undergroundforest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descent.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vegetation.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slicingveg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\walkingveg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\injury.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\continuingcave.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hole.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moltenrock.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\questionmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rope.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fatigued.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undergroundlake.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searising.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drowned.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tarpraft.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treasure.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jewels.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jewels2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jewels3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alientech.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\centerchunk.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

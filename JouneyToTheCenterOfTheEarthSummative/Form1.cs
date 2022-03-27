@@ -21,8 +21,13 @@ namespace JouneyToTheCenterOfTheEarthSummative
         
         int pageNumber = 0;
         int gearChoice = 0;
-        int goOn = 0;
-        Random randomGenerator = new Random();
+        int injury = 0;
+        int fatigue = 0;
+        int death = 0;
+        int treasureChoice = 0;
+        int treasureChoice2 = 0;
+        int delay = 0;
+        Random randGen = new Random();
         string parentPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;  //Gets the directory path, regardless of what computer it is played on
         
 
@@ -34,12 +39,22 @@ namespace JouneyToTheCenterOfTheEarthSummative
 
         private void soundplayer(string sound) //Function to load up sound without repeating lines
         {
-            string resourcePath = Path.Combine(parentPath, "Resources");
-            SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = Path.Combine(resourcePath, sound);
-
-            player.Load();
-            player.Play();
+           
+                string resourcePath = Path.Combine(parentPath, "Resources");
+                SoundPlayer player = new SoundPlayer();
+                if (sound == "Stop")
+                {
+                    player.Stop();
+                }
+                else {
+                    player.SoundLocation = Path.Combine(resourcePath, sound);
+                    player.Load();
+                    player.Play();
+                }
+            
+            
+                
+            
         }
 
         private void justText() //For only descriptions and no option to choose anything
@@ -118,26 +133,63 @@ namespace JouneyToTheCenterOfTheEarthSummative
 
         private void optionOneButton_Click(object sender, EventArgs e)
         {
-           if (pageNumber == 1)
+            if (pageNumber == 0)
+            {
+                starting();
+            }
+            else if (pageNumber == 1)
             {
                 pageNumber = 2;
+                soundplayer("Stop");
             }
-
-           if (pageNumber == 2)
+            else if (pageNumber == 2)
             {
                 pageNumber = 4;
             }
-
-           if (pageNumber == 5)
+            else if (pageNumber == 5)
             {
                 gearChoice = 1;
                 pageNumber = 6;
             }
-
-            if (pageNumber == 3)
+           else if (pageNumber == 8)
             {
-                starting();
+                pageNumber = 9;
             }
+            else if (pageNumber == 20)
+            {
+                pageNumber = 36;
+            }
+            else if (pageNumber == 43)
+            {
+                if (injury == 1)
+                {
+                    pageNumber = 45;
+                }
+                else
+                {
+                    pageNumber = 48;
+                }
+            }
+            else if (pageNumber == 45)
+            {
+                pageNumber = 46;
+            }
+            else if (pageNumber == 49)
+            {
+                pageNumber = 50;
+                treasureChoice = 1;
+            }
+            else if (pageNumber == 26)
+            {
+                pageNumber = 28;
+            }
+            else if (pageNumber == 32)
+            {
+                pageNumber = 33;
+                treasureChoice2 = 1;
+            }
+           
+
 
             displayPage();
 
@@ -149,15 +201,63 @@ namespace JouneyToTheCenterOfTheEarthSummative
             {
                 closing();
             }
-            
-            if (pageNumber == 1)
+
+            else if (pageNumber == 1)
             {
                 pageNumber = 3;
+                soundplayer("Stop");
             }
-            if (pageNumber == 5)
+            else if (pageNumber == 2)
+            {
+                pageNumber = 5;
+
+            }
+            else if (pageNumber == 5)
             {
                 gearChoice = 2;
                 pageNumber = 6;
+            }
+            else if (pageNumber == 8)
+            {
+                pageNumber = 10;
+            }
+            else if (pageNumber == 20)
+            {
+                pageNumber = 22;
+            }
+            else if (pageNumber == 43)
+            {
+                pageNumber = 44;
+            }
+            else if (pageNumber == 45)
+            {
+                pageNumber = 47;
+
+            }
+            else if (pageNumber == 49)
+            {
+                pageNumber = 51;
+                treasureChoice = 2;
+            }
+            else if (pageNumber == 26)
+            {
+                if (delay == 1)
+                {
+                    pageNumber = 27;
+                }
+                else if (randGen.Next(0, 101) > 70)
+                {
+                    pageNumber = 30;
+                }
+                else
+                {
+                    pageNumber = 31;
+                }
+            }
+            else if (pageNumber == 32)
+            {
+                pageNumber = 34;
+                treasureChoice2 = 2;
             }
             displayPage();
             
@@ -183,37 +283,126 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     pictureArea.Image = Properties.Resources.iceland;
                     justText();
                     break;
+                case 5:
+                    storyLabel.Text = "You decline the adventure due to safety reasons.\nLater, you regret your actions";
+                    pictureArea.Image = Properties.Resources.regret;
+                    justText();
+                    break;
                 case 6:
                     storyLabel.Text = "You pack up the chosen item and head on your way to the airport";
                     pictureArea.Image = Properties.Resources.airport;
                     justText();
                     break;
+                case 9:
+                    storyLabel.Text = "You decided to do a YOLO and jump off into the volcano!\nYou die an uneventful death!";
+                    pictureArea.Image = Properties.Resources.jumpintovolcano;
+                    justText();
+                    break;
+                case 10:
+                    storyLabel.Text = "Even though it was tempting, you awaited the professor to guide you";
+                    pictureArea.Image = Properties.Resources.wait;
+                    justText();
+                    break;
+                case 22:
+                    storyLabel.Text = "On this path, you see a treacherous descent";
+                    pictureArea.Image = Properties.Resources.descent;
+                    justText();
+                    break;
+                case 27:
+                    storyLabel.Text = "Since you and Lidenbrock took too much time, the tide rose, drowning both of you";
+                    pictureArea.Image = Properties.Resources.searising;
+                    pageNumber = -1;
+                    justText();
+                    break;
+                case 28:
+                    storyLabel.Text = "You and Lidenbrock decide to create a makeshift raft\nusing backpacks and tarp";
+                    pictureArea.Image = Properties.Resources.tarpraft;
+                    justText();
+                    break;
+                case 30:
+                    storyLabel.Text = "You and Lidenbrock weren't great swimmers, and so you die";
+                    pictureArea.Image = Properties.Resources.drowned;
+                    pageNumber = -1;
+                    justText();
+                    break;
+                case 33:
+                    storyLabel.Text = "You picked up the jewels and got out of there!";
+                    pictureArea.Image = Properties.Resources.jewels3;
+                    justText();
+                    break;
+                case 34:
+                    storyLabel.Text = "You picked up the alien-looking tech and got out of there!";
+                    pictureArea.Image = Properties.Resources.alientech;
+                    justText();
+                    break;
+                case 35:
+                    storyLabel.Text = "You picked up a piece of the center of the Earth and\n got out of there!";
+                    pictureArea.Image = Properties.Resources.centerchunk;
+                    justText();
+                    break;
+                case 36:
+                    storyLabel.Text = "On this path, you see an underground forest";
+                    pictureArea.Image = Properties.Resources.undergroundforest;
+                    justText();
+                    break;
+                case 44:
+                    storyLabel.Text = "Since you didn't want to risk anything, you go the way you came from,\nthrough the forest and into the second cave";
+                    fatigue = 1;
+                    pageNumber = 22;
+                    justText();
+                    break;
+                case 45:
+                    storyLabel.Text = "You made it, but because the professor had an injury, he fell down the hole. \nDo you want to look for him or not?";
+                    pictureArea.Image = Properties.Resources.hole;
+                    optionOneButton.Text = "Yes";
+                    optionTwoButton.Text = "No";
+                    break;
+                case 46:
+                    storyLabel.Text = "Since you feel lonely without Lidenbrock, you try and descend the chasm.\nUnfortunately, your rope breaks as you descend and you fall to an unknown fate.";
+                    pageNumber = -1;
+                    justText();
+                    break;
+                case 47:
+                    storyLabel.Text = "You continue alone, determine to fulfill the journey that Lidenbrock has wanted";
+                    death = 1;
+                    pageNumber = 49;
+                    justText();
+                    break;
+                case 50:
+                    storyLabel.Text = "You take the molten rock and get out of there!";
+                    pictureArea.Image = Properties.Resources.moltenrock;
+
+                    justText();
+                    break;
+                case 51:
+                    storyLabel.Text = "You take the diamond and get out of there!";
+                    pictureArea.Image = Properties.Resources.diamond;
+                    justText();
+                    break;
+                case 52:
+                    storyLabel.Text = "You take the mysterious rock (thinking it could be great), store it,\n and get out of there!";
+                    pictureArea.Image = Properties.Resources.questionmark;
+                    justText();
+                    break;
+
+
+
 
             }
         }
 
-        private void continueButton_Click(object sender, EventArgs e)
+        private void continueButton_Click(object sender, EventArgs e) 
         {
-            switch (pageNumber)
+            switch (pageNumber) //function to display the pages whenever there is a "Continue" button
             {
-                case 3:
-                    revert();
-                    storyLabel.Text = "Do you want to continue and atone?";
-                    optionOneButton.Text = "Yes, I want to change!";
-                    optionTwoButton.Text = "Nah, I quit because I am a loser!";
-                    pictureArea.Image = Properties.Resources.tryagain;
-                    pageNumber = 0;
-                    break;
                 case 4:
-                    storyLabel.Text = "After packing everything that you need for the trip, you realize that you have space for one extra item.\n Choose either a swiss army knife, a flashlight, or a mask";
+                    storyLabel.Text = "After packing everything that you need for the trip,\n you realize that you have space for one extra item.\n Choose either a swiss army knife, a flashlight, or a mask";
                     pictureArea.Image = Properties.Resources.suitcase;
                     revert();
-
                     optionThreeButton.Visible = true;
                     optionOneButton.Text = "Swiss army knife";
                     optionTwoButton.Text = "A flashlight";
                     optionThreeButton.Text = "A mask";
-
                     pageNumber = 5;
                     break;
                 case 6:
@@ -233,6 +422,239 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     optionTwoButton.Text = "Wait for a bit";
                     pictureArea.Image = Properties.Resources.reyvolcano;
                     break;
+                case 10:
+                    storyLabel.Text = "Fast forward a few days...";
+                    pictureArea.Image = Properties.Resources.fastforward;
+                    pageNumber = 11;
+                    break;
+                case 11:
+                    storyLabel.Text = "After hanging out for a few days with the locals, you and Lidenbrock\nfinally set out for the volcano";
+                    pictureArea.Image = Properties.Resources.pathwaytovolcano;
+                    pageNumber = 12;
+                    break;
+                case 12:
+                    storyLabel.Text = "Lidenbrock asks if you brought a mask, since there will be fumes in the volcano";
+                    pictureArea.Image = Properties.Resources.volcanofumes;
+                    if (gearChoice == 3)
+                    {
+                        pageNumber = 15;
+                    }
+                    else
+                    {
+                        if (randGen.Next(0, 101) > 50)
+                        {
+                            pageNumber = 13;
+                        }
+                        else
+                        {
+                            pageNumber = 14;
+                        }
+                    }
+                    break;
+                case 13:
+                    storyLabel.Text = "Lidenbrock tells you that he doesn't have an extra mask.\nTherefore, he goes in without you.";
+                    pageNumber = -1;
+                    break;
+                case 14:
+                    storyLabel.Text = "Lidenbrock calls you foolish for not bringing one,\nbut thankfully has a spare";
+                    pictureArea.Image = Properties.Resources.mask;
+                    pageNumber = 16;
+                    break;
+                case 15:
+                    storyLabel.Text = "Lidenbrock commends your smart thinking and you put on the mask\nbefore going into the depths of the volcano";
+                    pageNumber = 16;
+                    break;
+                case 16:
+                    storyLabel.Text = "While descending, there is a big magma area that needs to be crossed.\nLidenbrock crosses it and you need to cross it.";
+                    pictureArea.Image = Properties.Resources.magmachasm;
+                    if (randGen.Next(0, 101) < 20)
+                    {
+                        pageNumber = 17;
+                    }
+                    else
+                    {
+                        pageNumber = 18;
+                    }
+                    break;
+                case 17:
+                    storyLabel.Text = "You end up in magma, like Anakin in\n Star Wars Episode III: Revenge of the Sith";
+                    pictureArea.Image = Properties.Resources.anakinlava;
+                    pageNumber = -1;
+                    break;
+                case 18:
+                    storyLabel.Text = "You just barely make it over the lava pit unscathed\nas it shoots lava at you";
+                    pictureArea.Image = Properties.Resources.magmashooting;
+                    pageNumber = 19;
+                    break;
+                case 19:
+                    storyLabel.Text = "After some time, you and Lidenbrock are in a cave.\nHe asks if you have a flashlight on hand";
+                    pictureArea.Image = Properties.Resources.caveentrance;
+                    if (gearChoice == 2)
+                    {
+                        pageNumber = 20;
+                    }
+                    else
+                    {
+                        pageNumber = 21;
+                    }
+                    break;
+                case 20:
+                    storyLabel.Text = "You flash the light and you see two ways:\none left and one right";
+                    pictureArea.Image = Properties.Resources.leftright;
+                    revert();
+                    optionOneButton.Text = "Go Left";
+                    optionTwoButton.Text = "Go Right";
+                    break;
+                case 21:
+                    storyLabel.Text = "You and Lidenbrock stumble in the darkness for a bit,\ngoing into a random direction";
+                    pictureArea.Image = Properties.Resources.darkness;
+                    if (randGen.Next(1, 101) > 50)
+                    {
+                        pageNumber = 36;
+                    }
+                    else
+                    {
+                        pageNumber = 22;
+                    }
+                    break;
+                case 22:
+                    storyLabel.Text = "On this path, you see a treacherous descent";
+                    pictureArea.Image = Properties.Resources.descent;
+                    pageNumber = 23;
+                    break;
+                case 23:
+                    storyLabel.Text = "Lidenbrock packed a rope for just this ocassion!";
+                    pictureArea.Image = Properties.Resources.rope;
+                    if (fatigue == 1)
+                    {
+                        pageNumber = 24;
+                    }
+                    else
+                    {
+                        pageNumber = 25;
+                    }
+                    break;
+                case 24:
+                    storyLabel.Text = "You and Lidenbrock are quite fatigued, so you have to go down slowly";
+                    pictureArea.Image = Properties.Resources.fatigued;
+                    delay = 1;
+                    pageNumber = 26;
+                    break;
+                case 25:
+                    storyLabel.Text = "You and Lidenbrock successfully made it down!";
+                    pageNumber = 26;
+                    break;
+                case 26:
+                    storyLabel.Text = "You feel like you are almost there!  \nBut, lo, there is a lake that needs to be crossed.\nDo you create a raft or swim?";
+                    pictureArea.Image = Properties.Resources.undergroundlake;
+                    revert();
+                    optionOneButton.Text = "Swim";
+                    optionTwoButton.Text = "Create a raft";
+                    break;
+                case 28:
+                    if (randGen.Next(0, 101) < 90)
+                    {
+                        pageNumber = 31;
+                    }
+                    else
+                    {
+                        pageNumber = 29;
+                    }
+                    break;
+                case 29:
+                    storyLabel.Text = "You and Lidenbrock drown due to the makeshift boat not being strong enough!";
+                    pictureArea.Image = Properties.Resources.drowned;
+                    pageNumber = -1;
+                    break;
+                case 31:
+                    storyLabel.Text = "By some bloody miracle, you and Lidenbrock survive everything!";
+                    pictureArea.Image = Properties.Resources.yay;
+                    pageNumber = 32;
+                    break;
+                case 32:
+                    storyLabel.Text = "You and Lidenbrock have made it to the center!\nTreasures await you! Choose either\n a)jewels,\nb)alien-looking tech,\nor c) the center of the Earth";
+                    pictureArea.Image = Properties.Resources.treasure;
+                    revert();
+                    optionThreeButton.Visible = true;
+                    optionOneButton.Text = "Jewels";
+                    optionTwoButton.Text = "Alien-looking tech";
+                    optionThreeButton.Text = "The center of the Earth";
+                    break;
+
+                case 36:
+                    storyLabel.Text = "On this path, you see an underground forest";
+                    pictureArea.Image = Properties.Resources.undergroundforest;
+                    pageNumber = 37;
+                    break;
+                case 37:
+                    storyLabel.Text = "You encounter some vegetation and the professor'\n(very unprepared, this man!) asks if you have a Swiss army knife";
+                    pictureArea.Image = Properties.Resources.vegetation;
+                    if (gearChoice == 1)
+                    {
+                        pageNumber = 38;
+                    }
+                    else
+                    {
+                        pageNumber = 40;
+                    }
+                    break;
+                case 38:
+                    storyLabel.Text = "Lidenbrock commends you for your resourcefulness\nand you cut through the flora and fauna";
+                    pictureArea.Image = Properties.Resources.slicingveg;
+                    pageNumber = 39;
+                    break;
+                case 40:
+                    storyLabel.Text = "You and Lidenbrock are forced to go through the vegetation, risking injury";
+                    pictureArea.Image = Properties.Resources.walkingveg;
+                    if (randGen.Next(1, 101) < 30)
+                    {
+                        pageNumber = 41;
+                    }
+                    else
+                    {
+                        pageNumber = 42;
+                    }
+                    break;
+                case 41:
+                    storyLabel.Text = "Luckily, you and Lidenbrock make it unscathed";
+                    pageNumber = 39;
+                    break;
+                case 42:
+                    storyLabel.Text = "You made it through the vegetation, but unfortunately, Lidenbrock didn't.\nSince you don't know First Aid, Lidenbrock got an infection in his leg\n and had to be amputated.\nYou and him eventually make it through.";
+                    pictureArea.Image = Properties.Resources.injury;
+                    injury = 1;
+                    pageNumber = 39;
+                    break;
+                case 39:
+                    storyLabel.Text = "After making it out, you continue down the cave, feeling like it's endless...";
+                    pictureArea.Image = Properties.Resources.continuingcave;
+                    pageNumber = 43;
+                    break;
+                case 43:
+                    storyLabel.Text = "You and Lidenbrock come across a chasm that needs to be jumped.  \nYou feel the end in sight!\nBut, a choice has to be made.  Either jump the chasm\n or go back the way you came from";
+                    revert();
+                    optionOneButton.Text = "Risk and jump";
+                    optionTwoButton.Text = "Go back the other way";
+                    break;
+                case 49:
+                    storyLabel.Text = "You have made it to the center of the earth!\nThere are many items of value there, but you can only fit one!\nWhat item do you choose?";
+                    pictureArea.Image = Properties.Resources.treasure;
+                    revert();
+                    optionThreeButton.Visible = true;
+                    optionOneButton.Text = "Molten rock";
+                    optionTwoButton.Text = "Diamond";
+                    optionThreeButton.Text = "Mysterious rock";
+                    break;
+                default:
+                    revert();
+                    storyLabel.Text = "Do you want to continue and atone?";
+                    optionOneButton.Text = "Yes, I want to change!";
+                    optionTwoButton.Text = "Nah, I quit because I am a loser!";
+                    pictureArea.Image = Properties.Resources.tryagain;
+                    pageNumber = 0;
+                    break;
+
+
 
 
 
@@ -247,6 +669,17 @@ namespace JouneyToTheCenterOfTheEarthSummative
             {
                 gearChoice = 3;
                 pageNumber = 6;
+            }
+            else if (pageNumber == 49)
+            {
+                pageNumber = 52;
+                treasureChoice = 3;
+            }
+            else if (pageNumber == 32)
+            {
+                pageNumber = 35;
+                treasureChoice2 = 3;
+
             }
             displayPage();
         }

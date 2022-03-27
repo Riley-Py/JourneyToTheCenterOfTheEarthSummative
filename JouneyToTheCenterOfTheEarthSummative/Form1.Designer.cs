@@ -67,7 +67,7 @@
             // 
             // pictureArea
             // 
-            this.pictureArea.Location = new System.Drawing.Point(135, 39);
+            this.pictureArea.Location = new System.Drawing.Point(135, 31);
             this.pictureArea.Name = "pictureArea";
             this.pictureArea.Size = new System.Drawing.Size(318, 190);
             this.pictureArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -79,7 +79,7 @@
             // 
             this.storyLabel.AutoSize = true;
             this.storyLabel.Font = new System.Drawing.Font("PMingLiU-ExtB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storyLabel.Location = new System.Drawing.Point(55, 237);
+            this.storyLabel.Location = new System.Drawing.Point(55, 227);
             this.storyLabel.Name = "storyLabel";
             this.storyLabel.Size = new System.Drawing.Size(47, 15);
             this.storyLabel.TabIndex = 3;
@@ -89,7 +89,7 @@
             // optionOneButton
             // 
             this.optionOneButton.Font = new System.Drawing.Font("PMingLiU-ExtB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionOneButton.Location = new System.Drawing.Point(197, 288);
+            this.optionOneButton.Location = new System.Drawing.Point(197, 298);
             this.optionOneButton.Name = "optionOneButton";
             this.optionOneButton.Size = new System.Drawing.Size(196, 23);
             this.optionOneButton.TabIndex = 4;
@@ -101,7 +101,7 @@
             // optionTwoButton
             // 
             this.optionTwoButton.Font = new System.Drawing.Font("PMingLiU-ExtB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionTwoButton.Location = new System.Drawing.Point(197, 336);
+            this.optionTwoButton.Location = new System.Drawing.Point(197, 346);
             this.optionTwoButton.Name = "optionTwoButton";
             this.optionTwoButton.Size = new System.Drawing.Size(196, 23);
             this.optionTwoButton.TabIndex = 5;
@@ -113,7 +113,7 @@
             // optionThreeButton
             // 
             this.optionThreeButton.Font = new System.Drawing.Font("PMingLiU-ExtB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionThreeButton.Location = new System.Drawing.Point(197, 382);
+            this.optionThreeButton.Location = new System.Drawing.Point(197, 395);
             this.optionThreeButton.Name = "optionThreeButton";
             this.optionThreeButton.Size = new System.Drawing.Size(196, 23);
             this.optionThreeButton.TabIndex = 6;
@@ -141,7 +141,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::JouneyToTheCenterOfTheEarthSummative.Properties.Resources.titlePhoto;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(618, 430);
+            this.ClientSize = new System.Drawing.Size(626, 430);
             this.Controls.Add(this.continueButton);
             this.Controls.Add(this.optionThreeButton);
             this.Controls.Add(this.optionTwoButton);
