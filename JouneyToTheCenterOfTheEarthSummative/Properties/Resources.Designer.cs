@@ -113,6 +113,16 @@ namespace JouneyToTheCenterOfTheEarthSummative.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lidenbrock {
+            get {
+                object obj = ResourceManager.GetObject("lidenbrock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nothingspecial {
             get {
                 object obj = ResourceManager.GetObject("nothingspecial", resourceCulture);
@@ -123,9 +133,29 @@ namespace JouneyToTheCenterOfTheEarthSummative.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap reyvolcano {
+            get {
+                object obj = ResourceManager.GetObject("reyvolcano", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap suitcase {
             get {
                 object obj = ResourceManager.GetObject("suitcase", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap timelater {
+            get {
+                object obj = ResourceManager.GetObject("timelater", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

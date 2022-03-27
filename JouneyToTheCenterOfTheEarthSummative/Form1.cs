@@ -42,7 +42,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             player.Play();
         }
 
-        private void justText()
+        private void justText() //For only descriptions and no option to choose anything
         {
             optionOneButton.Visible = false;
             optionTwoButton.Visible = false;
@@ -51,7 +51,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             continueButton.Visible = true;
         }
 
-        private void revert()
+        private void revert() //When the options need to come back
         {
             continueButton.Visible = false;
 
@@ -60,7 +60,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
         }
 
 
-        private void closing()
+        private void closing() //To close the game if the user chose "No"
         {
             int closingSequence = 5;
             optionOneButton.Visible = false;
@@ -163,7 +163,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             
         }
 
-        private void displayPage()
+        private void displayPage() //Function to display the pages
         {
             switch (pageNumber)
             {
@@ -194,34 +194,51 @@ namespace JouneyToTheCenterOfTheEarthSummative
 
         private void continueButton_Click(object sender, EventArgs e)
         {
-            if (pageNumber == 3)
+            switch (pageNumber)
             {
-                revert();
-                storyLabel.Text = "Do you want to continue and atone?";
-                optionOneButton.Text = "Yes, I want to change!";
-                optionTwoButton.Text = "Nah, I quit because I am a loser!";
-                pictureArea.Image = Properties.Resources.tryagain;
-                pageNumber = 0;
-                
-                
-                
+                case 3:
+                    revert();
+                    storyLabel.Text = "Do you want to continue and atone?";
+                    optionOneButton.Text = "Yes, I want to change!";
+                    optionTwoButton.Text = "Nah, I quit because I am a loser!";
+                    pictureArea.Image = Properties.Resources.tryagain;
+                    pageNumber = 0;
+                    break;
+                case 4:
+                    storyLabel.Text = "After packing everything that you need for the trip, you realize that you have space for one extra item.\n Choose either a swiss army knife, a flashlight, or a mask";
+                    pictureArea.Image = Properties.Resources.suitcase;
+                    revert();
+
+                    optionThreeButton.Visible = true;
+                    optionOneButton.Text = "Swiss army knife";
+                    optionTwoButton.Text = "A flashlight";
+                    optionThreeButton.Text = "A mask";
+
+                    pageNumber = 5;
+                    break;
+                case 6:
+                    storyLabel.Text = "Some time later...";
+                    pictureArea.Image = Properties.Resources.timelater;
+                    pageNumber = 7;
+                    break;
+                case 7:
+                    storyLabel.Text = "You meet up with the guy that called you up on the phone in Iceland.\nYou find out that this man was the one and only Professor Lidenbrock!\n";
+                    pictureArea.Image = Properties.Resources.lidenbrock;
+                    pageNumber = 8;
+                    break;
+                case 8:
+                    storyLabel.Text = "You and Lidenbrock are at the capital of Iceland, Reykajavik.\nYou see a volcano in the distance and wonder if you should go to it or not.";
+                    revert();
+                    optionOneButton.Text = "Go to the volcano";
+                    optionTwoButton.Text = "Wait for a bit";
+                    pictureArea.Image = Properties.Resources.reyvolcano;
+                    break;
+
+
+
+
             }
-            if (pageNumber == 4)
-            {
-                storyLabel.Text = "After packing everything that you need for the trip, you realize that you have space for one extra item.\n Choose either a swiss army knife, a flashlight, or a mask";
-                pictureArea.Image = Properties.Resources.suitcase;
-                revert();
-
-                optionThreeButton.Visible = true;
-                optionOneButton.Text = "Swiss army knife";
-                optionTwoButton.Text = "A flashlight";
-                optionThreeButton.Text = "A mask";
-
-                pageNumber++;
-
-
-
-            }
+         
         }
 
         private void optionThreeButton_Click(object sender, EventArgs e)
@@ -229,7 +246,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             if (pageNumber == 5)
             {
                 gearChoice = 3;
-                pageNumber++;
+                pageNumber = 6;
             }
             displayPage();
         }
