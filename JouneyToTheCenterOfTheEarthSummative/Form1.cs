@@ -149,11 +149,11 @@ namespace JouneyToTheCenterOfTheEarthSummative
                 pageNumber = 4;
             }
             else if (pageNumber == 5)
-            {
+            { 
                 gearChoice = 1;
                 pageNumber = 6;
             }
-           else if (pageNumber == 8)
+            else if (pageNumber == 8)
             {
                 pageNumber = 9;
             }
@@ -163,13 +163,14 @@ namespace JouneyToTheCenterOfTheEarthSummative
             }
             else if (pageNumber == 43)
             {
-                if (injury == 1)
+                if (injury == 0)
                 {
-                    pageNumber = 45;
+                    pageNumber = 48;
                 }
                 else
                 {
-                    pageNumber = 48;
+                    pageNumber = 45;
+                    
                 }
             }
             else if (pageNumber == 45)
@@ -179,7 +180,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             else if (pageNumber == 49)
             {
                 pageNumber = 50;
-                treasureChoice = 1;
+                treasureChoice2 = 1;
             }
             else if (pageNumber == 26)
             {
@@ -188,7 +189,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             else if (pageNumber == 32)
             {
                 pageNumber = 33;
-                treasureChoice2 = 1;
+                treasureChoice = 1;
             }
            
 
@@ -239,7 +240,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             else if (pageNumber == 49)
             {
                 pageNumber = 51;
-                treasureChoice = 2;
+                treasureChoice2 = 2;
             }
             else if (pageNumber == 26)
             {
@@ -259,7 +260,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             else if (pageNumber == 32)
             {
                 pageNumber = 34;
-                treasureChoice2 = 2;
+                treasureChoice = 2;
             }
             displayPage();
             
@@ -370,6 +371,11 @@ namespace JouneyToTheCenterOfTheEarthSummative
                 case 47:
                     storyLabel.Text = "You continue alone, determine to fulfill the journey that Lidenbrock has wanted";
                     death = 1;
+                    pageNumber = 49;
+                    justText();
+                    break;
+                case 48:
+                    storyLabel.Text = "You and Lidenbrock successfully make it across!";
                     pageNumber = 49;
                     justText();
                     break;
@@ -670,17 +676,20 @@ namespace JouneyToTheCenterOfTheEarthSummative
                 case 62:
                     storyLabel.Text = "You and Lidenbrock successfully got out of there before the volcano errupted!";
                     pictureArea.Image = Properties.Resources.volcanoerupt;
-                    if (treasureChoice == 1)
+                    if (treasureChoice2 == 1)
                     {
                         pageNumber = 63;
+                        break;
                     }
-                    else if (treasureChoice == 2)
+                    if (treasureChoice2 == 2)
                     {
                         pageNumber = 64;
+                        break;
                     }
-                    else
+                    if (treasureChoice2 == 3)
                     {
                         pageNumber = 65;
+                        break;
                     }
                     break;
                 case 63:
@@ -699,17 +708,20 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     pageNumber = -3;
                     break;
                 case 70:
-                    if (treasureChoice2 == 1)
+                    if (treasureChoice == 1)
                     {
                         pageNumber = 71;
+                        break;
                     }
-                    else if (treasureChoice2 == 2)
+                    if (treasureChoice == 2)
                     {
                         pageNumber = 72;
+                        break;
                     }
-                    else
+                    if (treasureChoice == 3)
                     {
                         pageNumber = 73;
+                        break;
                     }
                     break;
                 case 71:
@@ -731,13 +743,15 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     
                     pictureArea.Image = Properties.Resources.thankyou;
                     while (timer != 0)
+                    {
                         Refresh();
                         storyLabel.Text = $"Thank you for playing this game!\nSadly, you got the bad ending of the first route!\nTry a different route next time!\nShutting down in {timer}";
-                    timer--;
-                    Thread.Sleep(1000);
-                    if (timer == 0)
-                    {
-                        this.Close();
+                        timer--;
+                        Thread.Sleep(1000);
+                        if (timer == 0)
+                        {
+                            this.Close();
+                        }
                     }
                     break;
                 case -3:
@@ -746,7 +760,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     while (timer != 0)
                     {
                         Refresh();
-                        storyLabel.Text = $"Thank you for playing this game! You got the good ending of the first route. Congrats!\nShutting down in {timer}";
+                        storyLabel.Text = $"Thank you for playing this game! \nYou got the good ending of the first route. Congrats!\nShutting down in {timer}";
                         timer--;
                         Thread.Sleep(1000);
                         if (timer == 0)
@@ -808,12 +822,12 @@ namespace JouneyToTheCenterOfTheEarthSummative
             else if (pageNumber == 49)
             {
                 pageNumber = 52;
-                treasureChoice = 3;
+                treasureChoice2 = 3;
             }
             else if (pageNumber == 32)
             {
                 pageNumber = 35;
-                treasureChoice2 = 3;
+                treasureChoice = 3;
 
             }
             displayPage();
