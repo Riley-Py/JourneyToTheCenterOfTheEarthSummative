@@ -230,5 +230,32 @@
   <ItemGroup>
     <None Include="Resources\centerchunk.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lost.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volcanoerupt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moltensouvenir.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mineral.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\millions.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thankyou.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuclearbomb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goodamountmoney.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jumpingjoy.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

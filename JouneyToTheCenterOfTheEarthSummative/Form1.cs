@@ -27,6 +27,8 @@ namespace JouneyToTheCenterOfTheEarthSummative
         int treasureChoice = 0;
         int treasureChoice2 = 0;
         int delay = 0;
+        int timer = 5;
+
         Random randGen = new Random();
         string parentPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;  //Gets the directory path, regardless of what computer it is played on
         
@@ -328,16 +330,19 @@ namespace JouneyToTheCenterOfTheEarthSummative
                 case 33:
                     storyLabel.Text = "You picked up the jewels and got out of there!";
                     pictureArea.Image = Properties.Resources.jewels3;
+                    pageNumber = 70;
                     justText();
                     break;
                 case 34:
                     storyLabel.Text = "You picked up the alien-looking tech and got out of there!";
                     pictureArea.Image = Properties.Resources.alientech;
+                    pageNumber = 70;
                     justText();
                     break;
                 case 35:
                     storyLabel.Text = "You picked up a piece of the center of the Earth and\n got out of there!";
                     pictureArea.Image = Properties.Resources.centerchunk;
+                    pageNumber = 70;
                     justText();
                     break;
                 case 36:
@@ -371,17 +376,19 @@ namespace JouneyToTheCenterOfTheEarthSummative
                 case 50:
                     storyLabel.Text = "You take the molten rock and get out of there!";
                     pictureArea.Image = Properties.Resources.moltenrock;
-
+                    pageNumber = 60;
                     justText();
                     break;
                 case 51:
                     storyLabel.Text = "You take the diamond and get out of there!";
                     pictureArea.Image = Properties.Resources.diamond;
+                    pageNumber = 60;
                     justText();
                     break;
                 case 52:
                     storyLabel.Text = "You take the mysterious rock (thinking it could be great), store it,\n and get out of there!";
                     pictureArea.Image = Properties.Resources.questionmark;
+                    pageNumber = 60;
                     justText();
                     break;
 
@@ -645,6 +652,139 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     optionTwoButton.Text = "Diamond";
                     optionThreeButton.Text = "Mysterious rock";
                     break;
+                case 60:
+                    if (death == 1)
+                    {
+                        pageNumber = 61;
+                    }
+                    else
+                    {
+                        pageNumber = 62;
+                    }
+                    break;
+                case 61:
+                    storyLabel.Text = "When making your way back, you couldn't since you didn't know the path!\nYou were trapped at the center of the Earth!\nIf only Lidenbrock survived...";
+                    pictureArea.Image = Properties.Resources.lost;
+                    pageNumber = -2;
+                    break;
+                case 62:
+                    storyLabel.Text = "You and Lidenbrock successfully got out of there before the volcano errupted!";
+                    pictureArea.Image = Properties.Resources.volcanoerupt;
+                    if (treasureChoice == 1)
+                    {
+                        pageNumber = 63;
+                    }
+                    else if (treasureChoice == 2)
+                    {
+                        pageNumber = 64;
+                    }
+                    else
+                    {
+                        pageNumber = 65;
+                    }
+                    break;
+                case 63:
+                    storyLabel.Text = "The molten rock was displayed as a souvenir";
+                    pictureArea.Image = Properties.Resources.moltensouvenir;
+                    pageNumber = -3;
+                    break;
+                case 64:
+                    storyLabel.Text = "When you went to a lab, you found out that the mysterious rock\nwas a mineral no one found before!";
+                    pictureArea.Image = Properties.Resources.mineral;
+                    pageNumber = -3;
+                    break;
+                case 65:
+                    storyLabel.Text = "You sold the diamond and made millions!";
+                    pictureArea.Image = Properties.Resources.millions;
+                    pageNumber = -3;
+                    break;
+                case 70:
+                    if (treasureChoice2 == 1)
+                    {
+                        pageNumber = 71;
+                    }
+                    else if (treasureChoice2 == 2)
+                    {
+                        pageNumber = 72;
+                    }
+                    else
+                    {
+                        pageNumber = 73;
+                    }
+                    break;
+                case 71:
+                    storyLabel.Text = "While messing about one day, you drop the alien tech.\nTurns out, it was a secret nuclear button that wipes out civilization!";
+                    pictureArea.Image = Properties.Resources.nuclearbomb;
+                    pageNumber = -4;
+                    break;
+                case 72:
+                    storyLabel.Text = "With the jewels, you pawned them off and made a good amount of money";
+                    pictureArea.Image = Properties.Resources.goodamountmoney;
+                    pageNumber = -5;
+                    break;
+                case 73:
+                    storyLabel.Text = "With a chunk of the Earth, you brought it into a lab and made a great discovery!\nIt is lauded by the science community!";
+                    pictureArea.Image = Properties.Resources.jumpingjoy;
+                    pageNumber = -5;
+                    break;
+                case -2:
+                    
+                    pictureArea.Image = Properties.Resources.thankyou;
+                    while (timer != 0)
+                        Refresh();
+                        storyLabel.Text = $"Thank you for playing this game!\nSadly, you got the bad ending of the first route!\nTry a different route next time!\nShutting down in {timer}";
+                    timer--;
+                    Thread.Sleep(1000);
+                    if (timer == 0)
+                    {
+                        this.Close();
+                    }
+                    break;
+                case -3:
+                    pictureArea.Image = Properties.Resources.thankyou;
+                
+                    while (timer != 0)
+                    {
+                        Refresh();
+                        storyLabel.Text = $"Thank you for playing this game! You got the good ending of the first route. Congrats!\nShutting down in {timer}";
+                        timer--;
+                        Thread.Sleep(1000);
+                        if (timer == 0)
+                        {
+                            this.Close();
+                        }
+
+                    }
+                    break;
+                case -4:
+                    pictureArea.Image = Properties.Resources.thankyou;
+                    while (timer != 0)
+                    {
+                        Refresh();
+                        storyLabel.Text = $"Thank you for playing this game!\n Sadly, you got the bad ending of the second route!\nBetter luck next time!\n Shutting down in {timer} ";
+                        timer--;
+                        Thread.Sleep(1000);
+                        if (timer == 0)
+                        {
+                            this.Close();
+                        }
+                    }
+                    break;
+                case -5:
+                    pictureArea.Image = Properties.Resources.thankyou;
+                    while (timer != 0)
+                    {
+                        Refresh();
+                        storyLabel.Text = $"Thank you for playing!\n You got the good ending of the second route!\n Congrats! Shutting down in {timer}";
+                        timer--;
+                        Thread.Sleep(1000);
+                        if (timer == 0)
+                        {
+                            this.Close();
+                        }
+
+                    }
+                    break;
                 default:
                     revert();
                     storyLabel.Text = "Do you want to continue and atone?";
@@ -653,11 +793,6 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     pictureArea.Image = Properties.Resources.tryagain;
                     pageNumber = 0;
                     break;
-
-
-
-
-
 
             }
          
