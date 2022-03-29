@@ -24,8 +24,12 @@ namespace JouneyToTheCenterOfTheEarthSummative
         int injury = 0;
         int fatigue = 0;
         int death = 0;
-        int treasureChoice = 0;
-        int treasureChoice2 = 0;
+        int moltenRock = 0;
+        int diamond = 0;
+        int mysteriousRock = 0;
+        int alienTech = 0;
+        int jewels = 0;
+        int centerEarth = 0;
         int delay = 0;
         int timer = 5;
 
@@ -180,7 +184,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             else if (pageNumber == 49)
             {
                 pageNumber = 50;
-                treasureChoice2 = 1;
+                
             }
             else if (pageNumber == 26)
             {
@@ -189,7 +193,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             else if (pageNumber == 32)
             {
                 pageNumber = 33;
-                treasureChoice = 1;
+                
             }
            
 
@@ -240,7 +244,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             else if (pageNumber == 49)
             {
                 pageNumber = 51;
-                treasureChoice2 = 2;
+                
             }
             else if (pageNumber == 26)
             {
@@ -260,7 +264,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             else if (pageNumber == 32)
             {
                 pageNumber = 34;
-                treasureChoice = 2;
+                
             }
             displayPage();
             
@@ -332,18 +336,21 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     storyLabel.Text = "You picked up the jewels and got out of there!";
                     pictureArea.Image = Properties.Resources.jewels3;
                     pageNumber = 70;
+                    jewels = 1;
                     justText();
                     break;
                 case 34:
                     storyLabel.Text = "You picked up the alien-looking tech and got out of there!";
                     pictureArea.Image = Properties.Resources.alientech;
                     pageNumber = 70;
+                    alienTech = 1;
                     justText();
                     break;
                 case 35:
                     storyLabel.Text = "You picked up a piece of the center of the Earth and\n got out of there!";
                     pictureArea.Image = Properties.Resources.centerchunk;
                     pageNumber = 70;
+                    centerEarth = 1;
                     justText();
                     break;
                 case 36:
@@ -382,6 +389,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
                 case 50:
                     storyLabel.Text = "You take the molten rock and get out of there!";
                     pictureArea.Image = Properties.Resources.moltenrock;
+                    moltenRock = 1;
                     pageNumber = 60;
                     justText();
                     break;
@@ -389,12 +397,14 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     storyLabel.Text = "You take the diamond and get out of there!";
                     pictureArea.Image = Properties.Resources.diamond;
                     pageNumber = 60;
+                    diamond = 1;
                     justText();
                     break;
                 case 52:
                     storyLabel.Text = "You take the mysterious rock (thinking it could be great), store it,\n and get out of there!";
                     pictureArea.Image = Properties.Resources.questionmark;
                     pageNumber = 60;
+                    mysteriousRock = 1;
                     justText();
                     break;
 
@@ -674,22 +684,22 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     pageNumber = -2;
                     break;
                 case 62:
-                    storyLabel.Text = "You and Lidenbrock successfully got out of there before the volcano errupted!";
+                    storyLabel.Text = "You and Lidenbrock successfully got out of there before the volcano erupted!";
                     pictureArea.Image = Properties.Resources.volcanoerupt;
-                    if (treasureChoice2 == 1)
+                    if (moltenRock == 1)
                     {
                         pageNumber = 63;
-                        break;
+                        
                     }
-                    if (treasureChoice2 == 2)
+                    if (mysteriousRock == 2)
                     {
                         pageNumber = 64;
-                        break;
+                        
                     }
-                    if (treasureChoice2 == 3)
+                    if (diamond == 3)
                     {
                         pageNumber = 65;
-                        break;
+                        
                     }
                     break;
                 case 63:
@@ -708,17 +718,17 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     pageNumber = -3;
                     break;
                 case 70:
-                    if (treasureChoice == 1)
+                    if (alienTech == 1)
                     {
                         pageNumber = 71;
                         break;
                     }
-                    if (treasureChoice == 2)
+                    if (jewels == 1)
                     {
                         pageNumber = 72;
                         break;
                     }
-                    if (treasureChoice == 3)
+                    if (centerEarth == 1)
                     {
                         pageNumber = 73;
                         break;
@@ -822,12 +832,12 @@ namespace JouneyToTheCenterOfTheEarthSummative
             else if (pageNumber == 49)
             {
                 pageNumber = 52;
-                treasureChoice2 = 3;
+                mysteriousRock = 3;
             }
             else if (pageNumber == 32)
             {
                 pageNumber = 35;
-                treasureChoice = 3;
+                centerEarth = 3;
 
             }
             displayPage();
