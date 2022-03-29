@@ -196,7 +196,19 @@ namespace JouneyToTheCenterOfTheEarthSummative
             }
             else if (pageNumber == 26)
             {
-                pageNumber = 28;
+                if (delay == 1)
+                {
+                    pageNumber = 27;
+                }
+                else if (randGen.Next(0, 101) > 70)
+                {
+                    pageNumber = 30;
+                }
+                else
+                {
+                    pageNumber = 31;
+                }
+                
             }
             else if (pageNumber == 32)
             {
@@ -257,18 +269,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
             }
             else if (pageNumber == 26)
             {
-                if (delay == 1)
-                {
-                    pageNumber = 27;
-                }
-                else if (randGen.Next(0, 101) > 70)
-                {
-                    pageNumber = 30;
-                }
-                else
-                {
-                    pageNumber = 31;
-                }
+                pageNumber = 28;
             }
             else if (pageNumber == 32)
             {
@@ -334,12 +335,26 @@ namespace JouneyToTheCenterOfTheEarthSummative
                 case 28:
                     storyLabel.Text = "You and Lidenbrock decide to create a makeshift raft\nusing backpacks and tarp";
                     pictureArea.Image = Properties.Resources.tarpraft;
+                    if (randGen.Next(0, 101) < 90)
+                    {
+                        pageNumber = 31;
+                    }
+                    else
+                    {
+                        pageNumber = 29;
+                    }
                     justText();
                     break;
                 case 30:
                     storyLabel.Text = "You and Lidenbrock weren't great swimmers, and so you die";
                     pictureArea.Image = Properties.Resources.drowned;
                     pageNumber = -1;
+                    justText();
+                    break;
+                case 31:
+                    storyLabel.Text = "By some bloody miracle, you and Lidenbrock have made it!\nYou have a direct way to the center of the Earth!";
+                    pictureArea.Image = Properties.Resources.yay;
+                    pageNumber = 32;
                     justText();
                     break;
                 case 33:
@@ -700,17 +715,18 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     if (moltenRock == 1)
                     {
                         pageNumber = 63;
-                        
+                            
                     }
-                    if (mysteriousRock == 2)
+                    if (mysteriousRock == 1)
                     {
                         pageNumber = 64;
                         
+                        
                     }
-                    if (diamond == 3)
+                    if (diamond == 1)
                     {
                         pageNumber = 65;
-                        
+                      
                     }
                     break;
                 case 63:
