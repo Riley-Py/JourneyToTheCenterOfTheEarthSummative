@@ -18,21 +18,28 @@ namespace JouneyToTheCenterOfTheEarthSummative
     public partial class adventureGame : Form
     {
         
-        
+        //Starting page number
         int pageNumber = 0;
+
+        //All of my "tracked" variables
         int gearChoice = 0;
         int injury = 0;
         int fatigue = 0;
         int death = 0;
+        int delay = 0;
+
+        //All of the treasures are in a variable as it is much easier to keep track of which treasure is which
         int moltenRock = 0;
         int diamond = 0;
         int mysteriousRock = 0;
         int alienTech = 0;
         int jewels = 0;
         int centerEarth = 0;
-        int delay = 0;
+
+        //Timer for ending countdown
         int timer = 5;
 
+        //Random number generator for the "Randomness"
         Random randGen = new Random();
         string parentPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;  //Gets the directory path, regardless of what computer it is played on
         
@@ -137,8 +144,9 @@ namespace JouneyToTheCenterOfTheEarthSummative
             starting();
         }
 
-        private void optionOneButton_Click(object sender, EventArgs e)
+        private void optionOneButton_Click(object sender, EventArgs e)  //Option one button
         {
+            //Stringed "if...else if" so that it doesn't lead into the next one (and only checks the conditions that need to be checked)
             if (pageNumber == 0)
             {
                 starting();
@@ -197,13 +205,14 @@ namespace JouneyToTheCenterOfTheEarthSummative
             }
            
 
-
+            //function to display the pages
             displayPage();
 
         }
 
         private void optionTwoButton_Click(object sender, EventArgs e)
         {
+            //Same as optionOneButton, but with different pages as this is a different option, so it leads to different routes
             if (pageNumber == 0)
             {
                 closing();
@@ -266,6 +275,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
                 pageNumber = 34;
                 
             }
+            //Calling function to display the pages
             displayPage();
             
         }
@@ -416,7 +426,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
 
         private void continueButton_Click(object sender, EventArgs e) 
         {
-            switch (pageNumber) //function to display the pages whenever there is a "Continue" button
+            switch (pageNumber) //function to display the pages whenever there is a "Continue" button or merely text
             {
                 case 4:
                     storyLabel.Text = "After packing everything that you need for the trip,\n you realize that you have space for one extra item.\n Choose either a swiss army knife, a flashlight, or a mask";
@@ -684,6 +694,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     pageNumber = -2;
                     break;
                 case 62:
+                    //This case checks to see if one of the three options was chosen on first route
                     storyLabel.Text = "You and Lidenbrock successfully got out of there before the volcano erupted!";
                     pictureArea.Image = Properties.Resources.volcanoerupt;
                     if (moltenRock == 1)
@@ -718,20 +729,21 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     pageNumber = -3;
                     break;
                 case 70:
+                    //This checks for the options in the second route
                     if (alienTech == 1)
                     {
                         pageNumber = 71;
-                        break;
+                        
                     }
                     if (jewels == 1)
                     {
                         pageNumber = 72;
-                        break;
+                        
                     }
                     if (centerEarth == 1)
                     {
                         pageNumber = 73;
-                        break;
+                        
                     }
                     break;
                 case 71:
@@ -750,7 +762,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     pageNumber = -5;
                     break;
                 case -2:
-                    
+                    //Bad ending of first route
                     pictureArea.Image = Properties.Resources.thankyou;
                     while (timer != 0)
                     {
@@ -765,8 +777,8 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     }
                     break;
                 case -3:
+                    //Good ending of first route
                     pictureArea.Image = Properties.Resources.thankyou;
-                
                     while (timer != 0)
                     {
                         Refresh();
@@ -781,6 +793,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     }
                     break;
                 case -4:
+                    //Bad ending of second route
                     pictureArea.Image = Properties.Resources.thankyou;
                     while (timer != 0)
                     {
@@ -795,6 +808,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     }
                     break;
                 case -5:
+                    //Bad ending of first route
                     pictureArea.Image = Properties.Resources.thankyou;
                     while (timer != 0)
                     {
@@ -810,6 +824,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
                     }
                     break;
                 default:
+                    //For if the user meets an end
                     revert();
                     storyLabel.Text = "Do you want to continue and atone?";
                     optionOneButton.Text = "Yes, I want to change!";
@@ -824,6 +839,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
 
         private void optionThreeButton_Click(object sender, EventArgs e)
         {
+            //Same as the other buttons, but for the optionThreeButton
             if (pageNumber == 5)
             {
                 gearChoice = 3;
@@ -840,6 +856,7 @@ namespace JouneyToTheCenterOfTheEarthSummative
                 centerEarth = 3;
 
             }
+            //Calls the displayPage() function
             displayPage();
         }
     }
